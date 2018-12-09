@@ -1,8 +1,6 @@
 # hwsc-dev-ops
 Resources for managing our services
 
-**NOTE: Setup Environment Variables**
-
 ## Scripts
- Back-up a MongoDB server
+ Back-up a MongoDB server using the environment variables
 - `backup_mongodb_server.sh `
