@@ -27,7 +27,8 @@ CREATE TABLE user_account
                     CONSTRAINT password_length
                     CHECK(length(password) > 7),
   organization      TEXT,
-  create_timestamp  TIMESTAMP NOT NULL
+  create_timestamp  TIMESTAMP NOT NULL,
+  is_verified       BOOLEAN NOT NULL DEFAULT FALSE
 );
 
 CREATE TABLE documents
