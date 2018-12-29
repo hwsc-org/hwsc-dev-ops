@@ -25,7 +25,7 @@ CREATE TABLE user_account
   email             VARCHAR(320) NOT NULL UNIQUE,
   password          VARCHAR(60) NOT NULL,
   organization      TEXT,
-  create_timestamp  TIMESTAMP NOT NULL,
+  created_date      DATE NOT NULL DEFAULT CURRENT_DATE,
   is_verified       BOOLEAN NOT NULL DEFAULT FALSE
 );
 
@@ -33,7 +33,7 @@ CREATE TABLE documents
 (
   uuid      ULID REFERENCES user_account(uuid) ON DELETE CASCADE,
   duid      KSUID PRIMARY KEY,
-  is_public BOOLEAN NOT NULL DEFAULT TRUE
+  is_public BOOLEAN NOT NULL
 );
 
 -- uuid and duid act as unique identifier b/c docs can be shared to any user
