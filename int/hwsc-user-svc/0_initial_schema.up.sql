@@ -25,8 +25,8 @@ CREATE TABLE user_account
   email             VARCHAR(320) NOT NULL UNIQUE,
   password          VARCHAR(60) NOT NULL,
   organization      TEXT,
-  created_date      DATE NOT NULL DEFAULT CURRENT_DATE,
-  is_verified       BOOLEAN NOT NULL DEFAULT FALSE
+  created_date      TIMESTAMP NOT NULL,
+  is_verified       BOOLEAN NOT NULL
 );
 
 CREATE TABLE documents
