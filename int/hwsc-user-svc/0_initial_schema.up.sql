@@ -23,17 +23,24 @@ CREATE TABLE user_svc.accounts
   is_verified       BOOLEAN NOT NULL
 );
 
+CREATE TABLE user_svc.verify_tokens
+(
+  token         TEXT PRIMARY KEY,
+  created_date  TIMESTAMP NOT NULL,
+  uuid          user_svc.ulid REFERENCES user_svc.accounts(uuid) ON DELETE CASCADE
+);
+
 CREATE TABLE user_svc.documents
 (
-  uuid      user_svc.ulid REFERENCES user_svc.accounts(uuid) ON DELETE CASCADE,
   duid      user_svc.ksuid PRIMARY KEY,
+  uuid      user_svc.ulid REFERENCES user_svc.accounts(uuid) ON DELETE CASCADE,
   is_public BOOLEAN NOT NULL
 );
 
 -- uuid and duid act as unique identifier b/c docs can be shared to any user
 CREATE TABLE user_svc.shared_documents
 (
-  PRIMARY KEY (uuid, duid),
-  uuid user_svc.ulid   REFERENCES user_svc.accounts(uuid) ON DELETE CASCADE,
-  duid user_svc.ksuid  REFERENCES user_svc.documents(duid) ON DELETE CASCADE
+  PRIMARY KEY (duid, uuid),
+  duid user_svc.ksuid  REFERENCES user_svc.documents(duid) ON DELETE CASCADE,
+  uuid user_svc.ulid   REFERENCES user_svc.accounts(uuid) ON DELETE CASCADE
 );
