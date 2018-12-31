@@ -23,7 +23,7 @@ CREATE TABLE user_svc.accounts
   is_verified       BOOLEAN NOT NULL
 );
 
-CREATE TABLE user_svc.verify_tokens
+CREATE TABLE user_svc.pending_tokens
 (
   token         TEXT PRIMARY KEY,
   created_date  TIMESTAMP NOT NULL,

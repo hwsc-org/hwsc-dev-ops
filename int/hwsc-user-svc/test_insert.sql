@@ -16,7 +16,7 @@ VALUES
 	('0ujsswThIGTUYm2K8FjOOfXtY1K', '0000XSNJG0MQJHBF4QX1EFD6Y3'),
 	('0ujssxh0cECutqzMgbtXSGnjorm', '0000XSNJG0MQJHBF4QX1EFD6Y3');
 
-INSERT INTO user_svc.verify_tokens (token, created_date, uuid)
+INSERT INTO user_svc.pending_tokens (token, created_date, uuid)
 VALUES
   ('som2342wralwekjasf90ae2#$@', current_timestamp, '0000XSNJG0MQJHBF4QX1EFD6Y5'),
   ('alskjdfaofuOIUFOSIJFdklsfj', current_timestamp, '0000XSNJG0MQJHBF4QX1EFD6Y6');
