@@ -2,7 +2,9 @@
 Resources for managing our services
 
 ## Scripts
- Back-up a MongoDB server using the environment variables
-- `backup_mongodb_server.sh `
  To restore dev-document MongoDB
-- `mongorestore --host $mongo_host:$mongo_port --db dev-document --collection dev-document -u $mongo_user -p $mongo_key  --ssl --sslAllowInvalidCertificates --drop --noIndexRestore backup/unit-test/dev-document/dev-document.bson`
+- `mongo $mongo_host:$mongo_port/dev-document -u $mongo_user --password=$mongo_key` 
+- `db['dev-document'].remove({})`
+- `exit`
+- `cd $GOPATH/src/github.com/hwsc-org/hwsc-dev-ops`
+- `mongoimport --jsonArray --db dev-document --collection dev-document --file backup/unit-test/dev-document/dev-document.json -h $mongo_host --port $mongo_port -u $mongo_user -p $mongo_key`
