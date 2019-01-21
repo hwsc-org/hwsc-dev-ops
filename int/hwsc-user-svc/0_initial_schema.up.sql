@@ -19,14 +19,14 @@ CREATE TABLE user_svc.accounts
   email             VARCHAR(320) NOT NULL UNIQUE,
   password          VARCHAR(60) NOT NULL,
   organization      TEXT,
-  created_date      TIMESTAMP NOT NULL,
+  created_date      TIMESTAMPTZ NOT NULL,
   is_verified       BOOLEAN NOT NULL
 );
 
 CREATE TABLE user_svc.pending_tokens
 (
   token         TEXT PRIMARY KEY,
-  created_date  TIMESTAMP NOT NULL,
+  created_date  TIMESTAMPTZ NOT NULL,
   uuid          user_svc.ulid REFERENCES user_svc.accounts(uuid) ON DELETE CASCADE
 );
 
