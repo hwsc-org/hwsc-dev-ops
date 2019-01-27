@@ -17,17 +17,19 @@ CREATE TABLE user_svc.accounts
   first_name        user_svc.user_name,
   last_name         user_svc.user_name,
   email             VARCHAR(320) NOT NULL UNIQUE,
+  prospective_email	VARCHAR(320) UNIQUE DEFAULT NULL,
   password          VARCHAR(60) NOT NULL,
   organization      TEXT,
   created_date      TIMESTAMPTZ NOT NULL,
+  modified_date		TIMESTAMPTZ DEFAULT NULL,
   is_verified       BOOLEAN NOT NULL
 );
 
 CREATE TABLE user_svc.pending_tokens
 (
-  token         TEXT PRIMARY KEY,
-  created_date  TIMESTAMPTZ NOT NULL,
-  uuid          user_svc.ulid REFERENCES user_svc.accounts(uuid) ON DELETE CASCADE
+  token             TEXT PRIMARY KEY,
+  created_date      TIMESTAMPTZ NOT NULL,
+  uuid              user_svc.ulid UNIQUE REFERENCES user_svc.accounts(uuid) ON DELETE CASCADE
 );
 
 CREATE TABLE user_svc.documents
