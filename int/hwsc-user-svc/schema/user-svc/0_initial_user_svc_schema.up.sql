@@ -21,7 +21,7 @@ CREATE TABLE user_svc.accounts
   password          VARCHAR(60) NOT NULL,
   organization      TEXT,
   created_date      TIMESTAMPTZ NOT NULL,
-  modified_date		TIMESTAMPTZ DEFAULT NULL,
+  modified_date     TIMESTAMPTZ DEFAULT NULL,
   is_verified       BOOLEAN NOT NULL
 );
 

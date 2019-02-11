@@ -1,0 +1,1 @@
+DROP SCHEMA user_security CASCADE;
