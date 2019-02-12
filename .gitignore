@@ -121,6 +121,7 @@ Temporary Items
 .apdisk
 
 # Files made by devs
-int/hwsc-user-svc/test_create.sh
+int/hwsc-user-svc/psql_test_create.sh
+
 
 # End of https://www.gitignore.io/api/macos,jetbrains+all
