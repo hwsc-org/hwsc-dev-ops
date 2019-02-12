@@ -1,9 +1,9 @@
 CREATE TYPE permission_level AS ENUM
 (
   'NO_PERM',
+  'USER_REGISTRATION',
   'USER',
-  'ADMIN',
-  'USER_REGISTRATION'
+  'ADMIN'
 );
 
 -- https://github.com/oklog/ulid
