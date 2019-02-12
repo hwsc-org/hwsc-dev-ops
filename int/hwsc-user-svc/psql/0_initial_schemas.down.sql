@@ -1,1 +1,2 @@
+DROP SCHEMA user_svc CASCADE;
 DROP SCHEMA user_security CASCADE;

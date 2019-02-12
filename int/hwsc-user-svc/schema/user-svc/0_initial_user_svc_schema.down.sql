@@ -1,1 +1,0 @@
-DROP SCHEMA user_svc CASCADE;
