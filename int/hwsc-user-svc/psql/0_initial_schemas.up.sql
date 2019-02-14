@@ -80,8 +80,9 @@ CREATE TYPE user_security.token_type AS ENUM
 
 CREATE TABLE user_security.secret
 (
-  secret_key        TEXT PRIMARY KEY,
-  created_timestamp TIMESTAMPTZ NOT NULL
+  secret_key            TEXT PRIMARY KEY,
+  created_timestamp     TIMESTAMPTZ NOT NULL,
+  expiration_timestamp  TIMESTAMPTZ NOT NULL
 );
 
 CREATE TABLE user_security.tokens
