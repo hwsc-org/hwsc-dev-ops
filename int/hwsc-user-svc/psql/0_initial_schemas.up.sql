@@ -82,7 +82,8 @@ CREATE TABLE user_security.secret
 (
   secret_key            TEXT PRIMARY KEY,
   created_timestamp     TIMESTAMPTZ NOT NULL,
-  expiration_timestamp  TIMESTAMPTZ NOT NULL
+  expiration_timestamp  TIMESTAMPTZ NOT NULL,
+  is_active             BOOLEAN NOT NULL
 );
 
 CREATE TABLE user_security.tokens

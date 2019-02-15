@@ -31,10 +31,10 @@ UPDATE user_svc.accounts SET
 WHERE user_svc.accounts.uuid = '0000xsnjg0mqjhbf4qx1efd6y3';
 
 
-INSERT INTO user_security.secret (secret_key, created_timestamp, expiration_timestamp)
+INSERT INTO user_security.secret (secret_key, created_timestamp, expiration_timestamp, is_active)
 VALUES
-  ('someSecretKey', current_timestamp, current_timestamp),
-  ('anotherSecretKey', current_timestamp, current_timestamp);
+  ('someSecretKey', current_timestamp, current_timestamp, true),
+  ('anotherSecretKey', current_timestamp, current_timestamp, false);
 
 INSERT INTO user_security.tokens (token_string, secret_key, token_type, algorithm, permission, expiration_date, uuid)
 VALUES
