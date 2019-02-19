@@ -94,5 +94,5 @@ CREATE TABLE user_security.tokens
   algorithm         user_security.algorithm_type NOT NULL,
   permission        permission_level NOT NULL,
   expiration_date   TIMESTAMPTZ NOT NULL,
-  uuid              ulid NOT NULL UNIQUE
+  uuid              ulid NOT NULL
 );
