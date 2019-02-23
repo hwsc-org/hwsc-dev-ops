@@ -1,6 +1,16 @@
 # hwsc-dev-ops
 Resources for managing our services
 
+## Requirements:
+
+1. Install [golang-migrate](https://github.com/golang-migrate/migrate)
+
+## Database Migration
+
+### hwsc-document-svc
+
+### hwsc-user-svc
+
 ## Scripts
  To restore dev-document MongoDB
 - `mongo $mongo_host:$mongo_port/dev-document -u $mongo_user --password=$mongo_key` 
