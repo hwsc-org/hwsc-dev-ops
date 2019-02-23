@@ -3,11 +3,13 @@ Resources for managing our services
 
 ## Requirements:
 
-1. Install [golang-migrate](https://github.com/golang-migrate/migrate)
+1. Read the docs for [golang-migrate](https://github.com/golang-migrate/migrate)
+2. 
 
 ## Database Migration
 
 ### hwsc-document-svc
+
 
 ### hwsc-user-svc
 
