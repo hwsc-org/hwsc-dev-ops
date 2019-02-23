@@ -1,0 +1,169 @@
+[
+  {
+    "create": "test-document",
+    "capped": "false",
+    "autoIndexId": "true",
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": [
+          "duid",
+          "uuid",
+          "publisherName.lastName",
+          "publisherName.firstName",
+          "callTypeName",
+          "groundType",
+          "studySite.city",
+          "studySite.country",
+          "ocean",
+          "sensorType",
+          "sensorName",
+          "samplingRate",
+          "latitude",
+          "longitude",
+          "imageUrlsMap",
+          "audioUrlsMap",
+          "videoUrlsMap",
+          "fileUrlsMap",
+          "recordTimestamp",
+          "createTimestamp",
+          "updateTimestamp",
+          "isPublic"
+        ],
+        "properties": {
+          "duid": {
+            "bsonType": "string",
+            "description": "must be a string and is required"
+          },
+          "uuid": {
+            "bsonType": "string",
+            "description": "must be a string and is required"
+          },
+          "publisherName.lastName": {
+            "bsonType": "string",
+            "description": "must be a string and is required"
+          },
+          "publisherName.firstName": {
+            "bsonType": "string",
+            "description": "must be a string and is required"
+          },
+          "callTypeName": {
+            "bsonType": "string",
+            "description": "must be a string and is required"
+          },
+          "groundType": {
+            "bsonType": "string",
+            "description": "must be a string and is required"
+          },
+          "studySite.city": {
+            "bsonType": "string",
+            "description": "must be a string and is required"
+          },
+          "studySite.country": {
+            "bsonType": "string",
+            "description": "must be a string and is required"
+          },
+          "ocean": {
+            "bsonType": "string",
+            "description": "must be a string and is required"
+          },
+          "sensorType": {
+            "bsonType": "string",
+            "description": "must be a string and is required"
+          },
+          "sensorName": {
+            "bsonType": "string",
+            "description": "must be a string and is required"
+          },
+          "samplingRate": {
+            "bsonType": "long",
+            "minimum": 0,
+            "exclusiveMinimum": false,
+            "maximum": 4000000000,
+            "exclusiveMaximum": false,
+            "description": "must be a long(MongoDB) and uint32(GoLang) and is required"
+          },
+          "latitude": {
+            "bsonType": "double",
+            "description": "must be a double(MongoDB) and float32(GoLang) and is required"
+          },
+          "longitude": {
+            "bsonType": "double",
+            "description": "must be a double(MongoDB) and float32(GoLang) and is required"
+          },
+          "imageUrlsMap": {
+            "bsonType": "object",
+            "description": "must be a object(MongoDB) and map[string]string(GoLang) and is required"
+          },
+          "audioUrlsMap": {
+            "bsonType": "object",
+            "description": "must be a object(MongoDB) and map[string]string(GoLang) and is required"
+          },
+          "videoUrlsMap": {
+            "bsonType": "object",
+            "description": "must be a object(MongoDB) and map[string]string(GoLang) and is required"
+          },
+          "fileUrlsMap": {
+            "bsonType": "object",
+            "description": "must be a object(MongoDB) and map[string]string(GoLang) and is required"
+          },
+          "recordTimestamp": {
+            "bsonType": "long",
+            "description": "must be a long(MongoDB) and int64(GoLang) and is required"
+          },
+          "createTimestamp": {
+            "bsonType": "long",
+            "description": "must be a long(MongoDB) and int64(GoLang) and is required"
+          },
+          "updateTimestamp": {
+            "bsonType": "long",
+            "description": "must be a long(MongoDB) and int64(GoLang) and is required"
+          },
+          "isPublic": {
+            "bsonType": "bool",
+            "description": "must be a bool and is required"
+          },
+
+          year: {
+            bsonType: "int",
+            minimum: 2017,
+            maximum: 3017,
+            exclusiveMaximum: false,
+            description: "must be an integer in [ 2017, 3017 ] and is required"
+          },
+          major: {
+            enum: [
+              "Math",
+              "English",
+              "Computer Science",
+              "History",
+              null
+            ],
+            description: "can only be one of the enum values and is required"
+          },
+          gpa: {
+            bsonType: [
+              "double"
+            ],
+            minimum: 0,
+            description: "must be a double and is required"
+          },
+          "address.city": {
+            bsonType: "string",
+            description: "must be a string and is required"
+          },
+          "address.street": {
+            bsonType: "string",
+            description: "must be a string and is required"
+          }
+        }
+      }
+    },
+    validationAction: <string>,
+    indexOptionDefaults: <document>,
+    viewOn: <source>,
+    pipeline: <pipeline>,
+    collation: <document>,
+    writeConcern: <document>
+  }
+]
