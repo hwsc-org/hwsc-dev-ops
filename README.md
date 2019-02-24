@@ -22,6 +22,12 @@ Resources for managing our services
 4. Stopping the Docker DB container will require you to run the migration again.
 
 ## hwsc-document-svc Integration Test
+# WARNING: 
+- Always check your hard drive memory!
+- Run `docker ps` to check for running containers!
+- Stop containers as necessary!
+- Remove images as necessary!
+
 ### Manual Integration Test
 1. `$ docker run -it -p 27017:27017 -e MONGO_INITDB_DATABASE=admin -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=secret hwsc/test-hwsc-document-svc:latest`
 2. This runs the following MongoDB database:
