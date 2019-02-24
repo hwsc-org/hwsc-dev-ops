@@ -38,7 +38,7 @@
           },
           "uuid": {
             "bsonType": "string",
-            "pattern": "[[:digit:][:alpha:]]{26}$",
+            "pattern": "^[[:digit:][:alpha:]]{26}$",
             "description": "required, 26 alphanumeric characters",
             "title": "the user unique identifier"
           },
