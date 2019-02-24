@@ -12,7 +12,7 @@ Resources for managing our services
 
 ### Unit/Integration Test Database Migration
 1. Test your migration using the CLI with Docker containers and migration directory `db-migrations/{service name}/test`
-2. Build Docker containers if you need to set DB configurations that are not covered by the migration e.g. making a new database in MongoDB or setting up initial admin account.
+2. Build [Docker containers](https://github.com/hwsc-org/hwsc-dev-ops/tree/master/dockerfiles) if you need to set DB configurations that are not covered by the migration e.g. making a new database in MongoDB or setting up initial admin account.
 3. Migrations do not persist in Docker containers, therefore restarting the container does not reflect migration changes.
 
 ### Sample Workflow
