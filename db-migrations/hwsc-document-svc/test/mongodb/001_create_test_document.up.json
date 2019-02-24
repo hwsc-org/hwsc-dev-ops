@@ -79,14 +79,14 @@
           },
           "studySite.state": {
             "bsonType": "string",
-            "minLength": 1,
+            "minLength": 0,
             "maxLength": 32,
             "description": "not required, 1-32 characters",
             "title": "state of study site"
           },
           "studySite.province": {
             "bsonType": "string",
-            "minLength": 1,
+            "minLength": 0,
             "maxLength": 48,
             "description": "not required, 1-48 characters",
             "title": "province of study site"
@@ -186,7 +186,7 @@
           },
           "updateTimestamp": {
             "bsonType": "long",
-            "minimum": 631152000,
+            "minimum": 0,
             "exclusiveMinimum": false,
             "maximum": 32503680524,
             "exclusiveMaximum": false,
