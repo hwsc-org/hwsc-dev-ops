@@ -1,0 +1,10 @@
+[
+  {
+    "dropIndexes": "hwsc-document",
+    "index": "duid_-1"
+  },
+  {
+    "dropIndexes": "hwsc-document",
+    "index": "uuid_1"
+  }
+]
