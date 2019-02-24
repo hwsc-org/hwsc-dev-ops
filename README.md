@@ -16,8 +16,8 @@ Resources for managing our services
 
 ### Sample Workflow
 1. Run `$ docker run -it -p 27017:27017 -e MONGO_INITDB_DATABASE=admin -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=secret hwsc/test-hwsc-document-svc:latest`
-2. Up migrate `$ migrate -path db-migrations/hwsc-document-svc/test/mongodb/ -database mongodb://testDocumentUser:testDocumentPwd@127.0.0.1:27017/test-document up 2`
-3. Down migrate `$ migrate -path db-migrations/hwsc-document-svc/test/mongodb/ -database mongodb://testDocumentUser:testDocumentPwd@127.0.0.1:27017/test-document down 2`
+2. Up migrate `$ migrate -path db-migrations/hwsc-document-svc/test/mongodb/ -database mongodb://testDocumentWriter:testDocumentPwd@127.0.0.1:27017/test-document up 2`
+3. Down migrate `$ migrate -path db-migrations/hwsc-document-svc/test/mongodb/ -database mongodb://testDocumentWriter:testDocumentPwd@127.0.0.1:27017/test-document down 2`
 4. Stopping the Docker DB container will require you to run the migration again.
 
 ## Scripts
