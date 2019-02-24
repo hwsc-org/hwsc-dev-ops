@@ -1,4 +1,4 @@
-#!/bin bash
+#!/bin/bash
 
 docker build -t test-hwsc-document-svc .
 docker tag test-hwsc-document-svc hwsc/test-hwsc-document-svc
