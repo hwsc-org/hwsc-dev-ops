@@ -16,7 +16,7 @@ Resources for managing our services
 3. Migrations do not persist in Docker containers, therefore restarting the container does not reflect migration changes.
 
 ### Sample Workflow
-1. Run `$ docker run -it -p 27017:27017 -e MONGO_INITDB_DATABASE=admin -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=secret hwsc/test-hwsc-document-svc:latest`
+1. Run `$ docker run -it -p 27017:27017 -e MONGO_INITDB_DATABASE=admin -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=secret hwsc/test-hwsc-document-svc-mongodb:latest`
 2. Up migrate `$ migrate -path db-migrations/hwsc-document-svc/test/mongodb/ -database mongodb://testDocumentWriter:testDocumentPwd@127.0.0.1:27017/test-document up 2`
 3. Down migrate `$ migrate -path db-migrations/hwsc-document-svc/test/mongodb/ -database mongodb://testDocumentWriter:testDocumentPwd@127.0.0.1:27017/test-document down 2`
 4. Stopping the Docker DB container will require you to run the migration again.
@@ -29,7 +29,7 @@ Resources for managing our services
 - Remove images as necessary!
 
 ### Manual Integration Test
-1. `$ docker run -it -p 27017:27017 -e MONGO_INITDB_DATABASE=admin -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=secret hwsc/test-hwsc-document-svc:latest`
+1. `$ docker run -it -p 27017:27017 -e MONGO_INITDB_DATABASE=admin -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=secret hwsc/test-hwsc-document-svc-mongodb:latest`
 2. This runs the following MongoDB database:
     - `admin` at `mongodb://mongoadmin:secret@127.0.0.1:27017/admin`
     - `test-document` at `mongodb://testDocumentWriter:testDocumentPwd@127.0.0.1:27017/test-document`
