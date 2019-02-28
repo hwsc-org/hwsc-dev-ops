@@ -62,3 +62,37 @@ To restore dev-document MongoDB
 - `exit`
 - `cd $GOPATH/src/github.com/hwsc-org/hwsc-dev-ops`
 - `mongoimport --jsonArray --db dev-document --collection dev-document --file backup/unit-test/dev-document/dev-document.json -h $mongo_host --port $mongo_port -u $mongo_user -p $mongo_key`
+
+## hwsc-user-svc Integration Test
+### Scripted Integration Test
+1. Update your environment variables to the latest from Slack channel #config-files-test
+2. Change directory into this current project folder and run the following:
+    - `$ cd db-local-run`
+    - `$ bash run_hwsc_user_svc.sh`
+3. In a directory of your choice run the following commands:
+    - `$ git clone https://github.com/hwsc-org/hwsc-user-svc.git`
+    - `$ cd hwsc-user-svc`
+    - `$ go run main.go`
+4. In a directory of your choice run the following commands:
+    - `$ git clone https://github.com/hwsc-org/hwsc-api-blocks.git`
+    - `$ cd hwsc-api-blocks/integration_tests`
+    - run `test_user_svc_client.js` *how to run script below
+    
+##### *How to run test_user_svc_client.js
+`test_user_svc_client.js` can be run in the following ways:
+ - Run all test cases: 
+    ```
+    $ node test_user_svc_client.js all
+    ```
+ - Run a specific test case (test case number is found in the upper comments of this script): 
+    ```
+    $ node test_user_svc_client.js <TEST_CASE_NUMBER>
+    ```
+ - Run multiple specific test cases by comma delimiting test case number: 
+    ```
+    $ node test_user_svc_client.js <TEST_CASE_NUMBER_1>,<TEST_CASE_NUMBER_2>
+    ```
+ - View server responses with any of the following modes above by adding a 4th parameter `t` to the command line ie: 
+    ```
+    $ node test_user_svc_client.js all t
+    ```
