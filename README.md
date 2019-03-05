@@ -46,7 +46,7 @@ Resources for managing our services
 ### Scripted Integration Test
 1. Grab the config file from Slack channel #config-files-test
 2. `$ cd db-local-run`
-3. `$ bash run_hwsc_document_svc.sh`
+3. `$ bash run_hwsc_document_svc_db.sh`
 4. Clone [hwsc-document-svc](https://github.com/hwsc-org/hwsc-document-svc) in a directory
 5. Change directory to `github.com/hwsc-org/hwsc-document-svc`
 6. Run the service `$ go run main.go`
