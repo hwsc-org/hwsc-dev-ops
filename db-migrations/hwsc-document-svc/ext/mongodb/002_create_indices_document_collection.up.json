@@ -1,6 +1,6 @@
 [
   {
-    "createIndexes": "hwsc-document",
+    "createIndexes": "test-document",
     "indexes": [
       {
         "key": {
