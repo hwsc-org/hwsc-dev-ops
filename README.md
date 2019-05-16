@@ -35,7 +35,7 @@ Resources for managing our services
     - `test-document` at `mongodb://testDocumentWriter:testDocumentPwd@127.0.0.1:27017/test-document`
 3. `$ migrate -path db-migrations/hwsc-document-svc/test/mongodb/ -database mongodb://testDocumentWriter:testDocumentPwd@127.0.0.1:27017/test-document up 2`
 4. Grab the config file from Slack channel #config-files-test
-5. `mongoimport --jsonArray --db test-document --collection test-document --file backup/unit-test/dev-document/test-document.json -h $mongo_host --port $mongo_port -u $mongo_user -p $mongo_key`
+5. `mongoimport --jsonArray --db test-document --collection test-document --file scripts/backup/unit-test/dev-document/test-document.json -h $mongo_host --port $mongo_port -u $mongo_user -p $mongo_key`
 6. Clone [hwsc-document-svc](https://github.com/hwsc-org/hwsc-document-svc) in a directory
 7. Change directory to `github.com/hwsc-org/hwsc-document-svc`
 8. Run the service `$ go run main.go`
@@ -61,7 +61,7 @@ To restore dev-document MongoDB
 - `db['dev-document'].remove({})`
 - `exit`
 - `cd $GOPATH/src/github.com/hwsc-org/hwsc-dev-ops`
-- `mongoimport --jsonArray --db dev-document --collection dev-document --file backup/unit-test/dev-document/dev-document.json -h $mongo_host --port $mongo_port -u $mongo_user -p $mongo_key`
+- `mongoimport --jsonArray --db dev-document --collection dev-document --file scripts/backup/unit-test/dev-document/dev-document.json -h $mongo_host --port $mongo_port -u $mongo_user -p $mongo_key`
 
 ## hwsc-user-svc Integration Test
 ### Scripted Integration Test
