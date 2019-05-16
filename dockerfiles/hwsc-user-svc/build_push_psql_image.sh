@@ -5,11 +5,11 @@ cat ../../db-migrations/hwsc-user-svc/test/psql/*.up.sql > user_svc_schema.sql
 
 # build an image from a docker file, -t = name and optionally a tag in the 'name:tag' format
 # docker build [OPTIONS] PATH
-docker build --build-arg db_name=$hosts_postgres_db -t hwsc/hwsc-user-svc-psql:int .
+docker build --build-arg db_name=$hosts_postgres_db -t hwsc/hwsc-user-svc-psql:test-int .
 
 # docker login
 docker login -u $docker_user --password $docker_password
 
 # push an image or a repo to a registry
 # docker push [OPTIONS] NAME[:TAG]
-docker push hwsc/hwsc-user-svc-psql:int
+docker push hwsc/hwsc-user-svc-psql:test-int
