@@ -1,4 +1,4 @@
-# Integrations:
+# Integrations
 Integration testing is currently **DEPRECATED**. Custom Docker images can be built using the [dockerfiles](https://github.com/hwsc-org/hwsc-dev-ops/tree/master/integrations/dockerfiles) directory.
 
 ## Requirement
