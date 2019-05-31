@@ -6,16 +6,25 @@
 trigger:
 - master
 
+pr: none
+
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'Ubuntu 16.04'
 
 variables:
-  GOBIN:  '$(GOPATH)/bin' # Go binaries path
-  GOROOT: '/usr/local/go1.11' # Go installation path
-  GOPATH: '$(system.defaultWorkingDirectory)/gopath' # Go workspace path
-  modulePath: '$(GOPATH)/src/github.com/$(build.repository.name)' # Path to the module's code
+  - name: GOBIN
+    value: ‘$(GOPATH)/bin’ # Go binaries path
+  - name: GOROOT
+    value: ‘/usr/local/go1.11’ # Go installation path
+  - name: GOPATH
+    value: ‘$(system.defaultWorkingDirectory)/gopath’ # Go workspace path
+  - name: modulePath
+    value: ‘$(GOPATH)/$(build.repository.name)’
+  - group: hwsc-dev-container-vars
 
 steps:
+- script: printenv
+
 - script: |
     mkdir -p '$(GOBIN)'
     mkdir -p '$(GOPATH)/pkg'
@@ -29,7 +38,6 @@ steps:
 
 - script: |
     go version
-    go get -v -t -d ./...
     if [ -f Gopkg.toml ]; then
         curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
         dep ensure
