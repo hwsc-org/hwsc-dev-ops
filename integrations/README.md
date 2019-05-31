@@ -1,5 +1,5 @@
-# Integration-Tests:
-This is currently **DEPRECATED**.
+# Integrations:
+Integration testing is currently **DEPRECATED**. Custom Docker images can be build using the [dockerfiles](https://github.com/hwsc-org/hwsc-dev-ops/tree/master/integrations/dockerfiles) directory.
 
 ## Requirement
 1. Read the docs for [golang-migrate](https://github.com/golang-migrate/migrate)
