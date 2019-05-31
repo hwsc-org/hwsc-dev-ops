@@ -68,7 +68,7 @@ To restore dev-document MongoDB
 1. Update your environment variables to the latest from Slack channel #config-files-test
 2. Change directory into this current project folder and run the following:
     - `$ cd db-local-run`
-    - `$ bash run_hwsc_user_svc.sh`
+    - `$ bash run_hwsc_user_svc_db.sh`
 3. In a directory of your choice run the following commands:
     - `$ git clone https://github.com/hwsc-org/hwsc-user-svc.git`
     - `$ cd hwsc-user-svc`
