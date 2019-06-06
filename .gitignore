@@ -125,3 +125,6 @@ int/hwsc-user-svc/psql_test_create.sh
 
 
 # End of https://www.gitignore.io/api/macos,jetbrains+all
+
+# Unit test result
+cmd/coverage.out
