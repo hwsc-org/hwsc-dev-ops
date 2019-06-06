@@ -8,10 +8,11 @@ import (
 var (
 	versionCmd = &cobra.Command{
 		Use:   "version",
-		Short: "Print the version number of HWSC service and ElasticSearch",
-		Long:  "Run this command to display version number",
+		Short: "Print the versions of HWSC CLI and ElasticSearch",
+		Long:  "Run this command to display versions",
 		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Println("HWSC version: v0.0.0")
+			// TODO unit test
+			fmt.Println("HWSC CLI: v0.0.0")
 			res, err := es7Client.Info()
 			if err != nil {
 				fmt.Println(err)

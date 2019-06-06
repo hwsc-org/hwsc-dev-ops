@@ -11,6 +11,7 @@ var (
 		Short: "Test ElasticSearch health status",
 		Long:  "Run this command to test health status of ElasticSearch",
 		Run: func(c *cobra.Command, args []string) {
+			// TODO unit test
 			res, err := es7Client.Cat.Health()
 			if err != nil {
 				fmt.Println(err)

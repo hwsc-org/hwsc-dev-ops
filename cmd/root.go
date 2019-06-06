@@ -7,9 +7,9 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "hwsc-dev-ops",
+	Use:   "hwsc-cli",
 	Short: "Humpback Whale Social Call command line tool",
-	Long:  "For more information, select following available commands",
+	Long:  "For more information, select the following available commands",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("For more information on a specific command, type help command-name")
 	},
